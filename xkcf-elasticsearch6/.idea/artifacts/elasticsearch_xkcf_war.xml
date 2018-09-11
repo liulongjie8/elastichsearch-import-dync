@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="elasticsearch-xkcf:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="es_xkcf.war">
+      <element id="artifact" artifact-name="elasticsearch-xkcf:war exploded" />
+    </root>
+  </artifact>
+</component>

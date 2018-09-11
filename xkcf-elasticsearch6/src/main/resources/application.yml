@@ -1,0 +1,19 @@
+spring:
+  jmx:
+    enabled: false
+# 日志记录
+logging:
+    level:
+       root: INFO
+       org.springframework.web: INFO
+       org.hibernate: INFO
+
+
+# elasticsearch 同步参数
+elasticsearch:
+  ansy:
+    cluster-name: my-application
+    ips:
+     - ip: 192.168.10.202
+       port: 9300
+
