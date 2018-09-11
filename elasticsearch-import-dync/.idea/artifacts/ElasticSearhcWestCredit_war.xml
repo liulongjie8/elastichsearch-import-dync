@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ElasticSearhcWestCredit:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="es_lhjc.war">
+      <element id="artifact" artifact-name="ElasticSearhcWestCredit:war exploded" />
+    </root>
+  </artifact>
+</component>

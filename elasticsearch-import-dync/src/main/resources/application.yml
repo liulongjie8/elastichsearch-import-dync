@@ -1,0 +1,42 @@
+spring:
+  datasource:
+       driverClassName: oracle.jdbc.driver.OracleDriver
+       url: jdbc:oracle:thin:@192.168.10.151:1521:xbzx
+       username: zr_isp_gz_prod
+       password: oracle
+       tomcat:
+          max-wait: 5000
+          max-active: 20
+          test-on-borrow: true
+          min-evictable-idle-time-millis: 10000
+  jmx:
+    enabled: false
+# 日志记录
+logging:
+    config: src/main/resources/log4j2.yml
+
+elasticsearch:
+  ansy:
+      p-thread-num: 1
+      c-thread-num: 1
+      page-size: 7000
+      cluster-name: my-application
+      timepath: E:\
+      ips:
+         - ip: 192.168.10.202
+           port: 9300
+      sqls:
+       "lhcj_base_legal_identity": "{\"sql\":\"select * from lhcj_base_legal_identity\",\"syncType\":\"full\",\"sortFile\":[\"MODIFY_DATE\"]}"
+       "lhcj_base_person_identity": "{\"sql\":\"select * from lhcj_base_person_identity\",\"syncType\":\"full\",\"sortFile\":[\"MODIFY_DATE\"]}"
+       "lhcj_sum_l_dep_matters_list": "{\"sql\":\"select * from lhcj_sum_l_dep_matters_list\",\"syncType\":\"full\",\"sortFile\":[\"MODIFY_DATE\"]}"
+       "lhcj_sum_p_dep_matters_list": "{\"sql\":\"select * from lhcj_sum_p_dep_matters_list\",\"syncType\":\"full\",\"sortFile\":[\"MODIFY_DATE\"]}"
+       "lhcj_legal_black": "{\"sql\":\"select * from lhcj_legal_black\",\"syncType\":\"increase\",\"sortFile\":[\"MODIFY_DATE\"],\"syncFiledName\":\"MODIFY_DATE\"}"
+       "lhcj_legal_red": "{\"sql\":\"select * from lhcj_legal_red\",\"syncType\":\"increase\",\"sortFile\":[\"MODIFY_DATE\"],\"syncFiledName\":\"MODIFY_DATE\"}"
+       "lhcj_person_red": "{\"sql\":\"select * from lhcj_person_red\",\"syncType\":\"increase\",\"sortFile\":[\"MODIFY_DATE\"],\"syncFiledName\":\"MODIFY_DATE\"}"
+       "lhcj_person_black": "{\"sql\":\"select * from lhcj_person_black\",\"syncType\":\"increase\",\"sortFile\":[\"MODIFY_DATE\"],\"syncFiledName\":\"MODIFY_DATE\"}"
+       "feedback_l_black": "{\"sql\":\"select * from lhcj_person_black\",\"syncType\":\"increase\",\"sortFile\":[\"MODIFY_DATE\"],\"syncFiledName\":\"MODIFY_DATE\"}"
+       "feedback_p_black": "{\"sql\":\"select * from feedback_p_black\",\"syncType\":\"increase\",\"sortFile\":[\"MODIFY_DATE\"],\"syncFiledName\":\"MODIFY_DATE\"}"
+       "feedback_l_red": "{\"sql\":\"select * from feedback_l_red\",\"syncType\":\"increase\",\"sortFile\":[\"MODIFY_DATE\"],\"syncFiledName\":\"MODIFY_DATE\"}"
+       "feedback_p_red": "{\"sql\":\"select * from feedback_p_red\",\"syncType\":\"increase\",\"sortFile\":[\"MODIFY_DATE\"],\"syncFiledName\":\"MODIFY_DATE\"}"
+server:
+  port: 8083
